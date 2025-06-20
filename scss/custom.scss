@@ -1,0 +1,38 @@
+// 1. Variables personnalisées
+$theme-colors: (
+    "primary": #7b2cbf,
+    // violet
+    "secondary": #f554bb,
+    // rose
+    "success": #944ccf,
+    "danger": #ee03a0,
+    "warning": #fca5d6,
+    "info": #c78bef,
+    "light": #fceff9,
+    "dark": #2a003f,
+);
+
+body {
+    font-family: "Poiret One", sans-serif; /* narration par défaut */
+}
+
+.title {
+    font-family: "Cinzel Decorative", serif;
+}
+
+.author {
+    font-family: "Princess Sofia", cursive;
+}
+
+/* Aliénor */
+.aliénor {
+    font-family: "Dekko", cursive;
+}
+
+/* Nova */
+.nova {
+    font-family: "Oxanium", sans-serif;
+}
+
+// 2. Import de Bootstrap après la personnalisation
+@import "../node_modules/bootstrap/scss/bootstrap";
