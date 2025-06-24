@@ -1,9 +1,17 @@
 @charset "UTF-8";
-body {
+body,
+p {
   font-family: "Poiret One", sans-serif; /* narration par défaut */
+  font-size: 18px;
 }
 
-.title {
+.title,
+h2,
+.h2,
+h3,
+.h3,
+h5,
+.h5 {
   font-family: "Cinzel Decorative", serif;
 }
 

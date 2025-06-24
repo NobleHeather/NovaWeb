@@ -1,5 +1,29 @@
 # TODO - Projet site "Aliénor & Nova"
 
+<!--! Now :  -->
+
+6. Affichage complet du sommaire après lecture (retour depuis camembert)
+   Très bonne idée. Pour le faire :
+
+Tu stockes dans localStorage une valeur du type :
+
+js
+Copier
+Modifier
+localStorage.setItem('storyCompleted', true);
+Puis dans ton JS principal :
+
+js
+Copier
+Modifier
+if (localStorage.getItem('storyCompleted')) {
+// Afficher tous les titres directement
+sommaireList.innerHTML = fullSommaireHtml;
+}
+Tu pourrais générer fullSommaireHtml en JS à partir d’un tableau global des titres à ce moment-là.
+
+Souhaites-tu que je te code un exemple de ça ?
+
 ## 🟣 Préparatifs (à faire une seule fois)
 
 -   [x] Configurer VS Code : extensions utiles (Live Server, Prettier…)

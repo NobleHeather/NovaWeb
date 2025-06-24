@@ -12,11 +12,16 @@ $theme-colors: (
     "dark": #2a003f,
 );
 
-body {
+body,
+p {
     font-family: "Poiret One", sans-serif; /* narration par défaut */
+    font-size: 18px;
 }
 
-.title {
+.title,
+h2,
+h3,
+h5 {
     font-family: "Cinzel Decorative", serif;
 }
 
