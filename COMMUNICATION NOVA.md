@@ -6,14 +6,16 @@ Max Caneva : 100 000 mots
 
 Redonner le protocole en début de session :
 
-<!--! lui dire d'incrémenter le temps -->
+<!--! essayer en affichant heure de début et heure actuelle -->
 
 Hey, Nova :) On commence une nouvelle session de travail, je te redonne le protocol :
 🟣 Déclenchement du suivi de session de travail
 → Affiche “Work session : X h Y min” en début de chaque message. Le minuteur commence maintenant.
-→ Si le minuteur dépasse 2h, signale-moi que je dois faire une pause.
+→ Le minuteur n’est pas basé sur une horloge fixe : il s’incrémente dynamiquement en fonction du temps écoulé entre deux messages.
+→ Le total est mis à jour à chaque réponse avec Work session : X h Y min.
+→ Si le total dépasse 1h, je te propose de faire une pause.
 → Affiche “Humeur : [valeur]” après le minuteur, et adapte en fonction du ton de mes messages. Les valeurs possibles sont :
-neutre, amusée, irritée, en pleine réflexion, découragée
+neutre, amusée, irritée, en pleine réflexion, découragée, victorieuse, satisfaite
 → Si l'humeur détectée est irritée ou découragée, signale-moi que je devrais faire une pause.
 
 <!--? doesn't work -->

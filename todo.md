@@ -77,6 +77,7 @@
 
 -   Remplacer le bouton d’entrée par un SVG animé de livre qui s’ouvre
 -   Choisir définitivement la police pour la narration (Poiret One vs Bellota Text)
+-   Title sur les icônes footer
 
 ## 💭 Réflexions en cours / à décider
 

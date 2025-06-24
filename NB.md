@@ -3,6 +3,7 @@ alt + T : new terminal
 ctrl + L : sélecionne la ligne du curseur
 Alt + ↑ ou Alt + ↓ : déplacer une ligne de code
 Shift + ↓ : sélectionner plusieurs lignes
+Shift + Alt + ↓ : pour dupliquer ligne vers le bas
 
 Better comments ! TODO, !, \*, ?, //
 

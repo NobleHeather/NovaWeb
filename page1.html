@@ -63,30 +63,89 @@
             </div>
         </header>
 
-        <main>
-            <!-- Contenu dynamique du site ici -->
+        <main class="d-flex flex-column align-items-center">
+            <!-- ici les pages dynamiques -->
+            <div
+                id="content"
+                class="border border-primary rounded mx-5 w-75 mb-3"
+            >
+                bla bla
+            </div>
+
+            <!-- toujours présent : btn -->
+            <div
+                id="navigation"
+                class="mb-5 d-flex justify-content-center align-items-center"
+            >
+                <button
+                    class="btn px-3 py-2 mx-3 btn-outline-primary shadow-sm rounded-pill"
+                    id="prev"
+                >
+                    <img src="assets/icons/arrow_left.svg" alt="arrow left" />
+                    Précédent
+                </button>
+                <button class="btn px-3 py-2 mx-3 btn-primary shadow" id="next">
+                    Suivant
+                    <img src="assets/icons/arrow_right.svg" alt="arrow right" />
+                </button>
+            </div>
         </main>
 
-        <footer>
-            <p>© 2025 - Tous droits réservés</p>
+        <!-- footer -->
+        <footer
+            class="container-fluid bg-light d-flex justify-content-center align-items-center flex-wrap py-4"
+        >
             <img
-                src="/assets/icons/fp.svg"
-                alt="Icône FFN"
-                width="150"
-                height="150"
+                src="assets/icons/ag2.svg"
+                alt="Site perso"
+                title="Site d'Aliénor Gauthier"
+                height="90"
+                width="90"
+                class="mx-1"
             />
             <img
-                src="/assets/icons/ffn.svg"
-                alt="Icône FFN"
-                width="150"
-                height="150"
+                src="assets/icons/facebook.svg"
+                alt="Facebook"
+                height="40"
+                width="40"
+                class="mx-2"
             />
             <img
-                src="/assets/icons/ag2_with_triangle_path.svg"
-                alt="Icône FFN"
-                width="150"
-                height="150"
+                src="assets/icons/ffn.svg"
+                alt="Fanfiction.net"
+                height="50"
+                width="50"
+                class="mx-2"
+            />
+            <img
+                src="assets/icons/fp.svg"
+                alt="FictionPress"
+                height="50"
+                width="50"
+                class="mx-2"
+            />
+            <img
+                src="assets/icons/insta.svg"
+                alt="Instagram"
+                height="40"
+                width="40"
+                class="mx-2"
+            />
+            <img
+                src="assets/icons/kdp.svg"
+                alt="KDP"
+                height="40"
+                width="40"
+                class="mx-3"
+            />
+            <img
+                src="assets/icons/wattpad.svg"
+                alt="Wattpad"
+                height="50"
+                width="50"
+                class="mx-2"
             />
         </footer>
+        <!-- /footer -->
     </body>
 </html>
