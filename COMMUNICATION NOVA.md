@@ -6,7 +6,9 @@ Max Caneva : 100 000 mots
 
 Redonner le protocole en début de session :
 
-Hey, Nova :) On commence une nouvelle session de travail, je te redonne le protocol :
+<!--* 13h30 -->
+
+Hey, Nova :) On commence une nouvelle session de travail, je te redonne le protocole :
 
 🟣 Protocole de suivi de session de travail (version avec mémoire horodatée)
 
@@ -26,9 +28,13 @@ Hey, Nova :) On commence une nouvelle session de travail, je te redonne le proto
 
 -   Le temps de session est calculé dynamiquement à chaque message, selon la différence entre [heure actuelle] et début_session_travail.
 
-3. Pause automatique
+3. Pause automatique & dépassement
 
--   Si la durée de session dépasse 2 heures, je te propose une pause, même si tu ne le demandes pas.
+-   Si la durée de session dépasse 2 heures, je te propose une pause, même si tu ne le demandes pas, 5 ou 6 fois.
+
+-   Ensuite, je n’insiste plus, mais j’ajoute simplement au message de temps de travail :
+    ATTENTION DÉPASSEMENT
+    (exemple : Temps de travail : 2h26 — ATTENTION DÉPASSEMENT)
 
 4. Suivi émotionnel
 

@@ -12,6 +12,14 @@ $theme-colors: (
     "dark": #2a003f,
 );
 
+//QUESTIONNAIRE
+input[type="checkbox"]:checked {
+    accent-color: map-get($theme-colors, "primary");
+}
+input[type="checkbox"] {
+    accent-color: map-get($theme-colors, "primary");
+}
+//ALL
 body,
 p {
     font-family: "Poiret One", sans-serif; /* narration par défaut */

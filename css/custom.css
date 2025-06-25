@@ -1,4 +1,12 @@
 @charset "UTF-8";
+input[type=checkbox]:checked {
+  accent-color: #7b2cbf;
+}
+
+input[type=checkbox] {
+  accent-color: #7b2cbf;
+}
+
 body,
 p {
   font-family: "Poiret One", sans-serif; /* narration par défaut */
