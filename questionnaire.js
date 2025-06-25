@@ -53,6 +53,22 @@ function validerQuiz() {
     feedback.className = "mt-4 fw-bold";
     feedback.textContent = `Résultat : ${score}/9`;
     document.getElementById("quiz-form").appendChild(feedback);
+
+    if (score === 9) {
+        const modal = new bootstrap.Modal(
+            document.getElementById("bravoModal"),
+            {
+                backdrop: "static", // empêche clic extérieur
+                keyboard: false, // empêche Esc de le fermer
+            }
+        );
+        modal.show();
+    } else {
+        document.getElementById("valider").disabled = true;
+        const retry = document.getElementById("reessayer");
+        retry.classList.remove("d-none");
+        retry.addEventListener("click", () => location.reload());
+    }
 }
 
 // 👂 Bouton de validation du formulaire

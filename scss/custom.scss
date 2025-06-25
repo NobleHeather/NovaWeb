@@ -47,5 +47,8 @@ h5 {
     font-family: "Oxanium", sans-serif;
 }
 
+.modal-body a {
+    text-decoration: none;
+}
 // 2. Import de Bootstrap après la personnalisation
 @import "../node_modules/bootstrap/scss/bootstrap";

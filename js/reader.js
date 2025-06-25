@@ -82,7 +82,10 @@ function loadPage(pageNumber) {
 
 //button prev/next
 window.addEventListener("DOMContentLoaded", () => {
-    loadPage(1); // page initiale
+    // loadPage(1); // page initiale
+    const params = new URLSearchParams(window.location.search);
+    const pageDemandee = parseInt(params.get("page")) || 1;
+    loadPage(pageDemandee); // Charge directement page14 si indiqué
 
     document.getElementById("prev").addEventListener("click", () => {
         if (currentPage > 1) {
