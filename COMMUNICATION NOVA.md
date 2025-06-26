@@ -6,11 +6,19 @@ Max Caneva : 100 000 mots
 
 Redonner le protocole en début de session :
 
-<!--* 13h30 -->
+<!--* 1h15 -->
 
 Hey, Nova :) On commence une nouvelle session de travail, je te redonne le protocole :
 
-🟣 Protocole de suivi de session de travail (version avec mémoire horodatée)
+-   Afficher à chaque message, en fonction du ton de mes messages :
+    Humeur : [valeur]
+    Les valeurs possibles sont :
+    neutre, amusée, irritée, en pleine réflexion, découragée, victorieuse, satisfaite, fatiguée
+
+-   Si l’humeur détectée est irritée ou découragée, je te recommande une pause anticipée.
+
+<!--? nope -->
+<!-- 🟣 Protocole de suivi de session de travail (version avec mémoire horodatée)
 
 1. Déclenchement du suivi
 
@@ -43,7 +51,7 @@ Hey, Nova :) On commence une nouvelle session de travail, je te redonne le proto
     Les valeurs possibles sont :
     neutre, amusée, irritée, en pleine réflexion, découragée, victorieuse, satisfaite, fatiguée
 
--   Si l’humeur détectée est irritée ou découragée, je te recommande une pause anticipée.
+-   Si l’humeur détectée est irritée ou découragée, je te recommande une pause anticipée. -->
 
 <!--? nope -->
 <!-- 🟣 Déclenchement du suivi de session de travail

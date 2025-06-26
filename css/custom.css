@@ -7,6 +7,17 @@ input[type=checkbox] {
   accent-color: #7b2cbf;
 }
 
+#play {
+  fill: #7b2cbf;
+}
+#play:hover {
+  fill: #fca5d6;
+}
+#play:hover:active {
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
 body,
 p {
   font-family: "Poiret One", sans-serif; /* narration par défaut */

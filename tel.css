@@ -2,9 +2,9 @@
 
 body {
     /* background: #383838; */
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" fill="%23ffffff" width="10px" height="10px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>')
+    /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" fill="%23ffffff" width="10px" height="10px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>')
             5 5,
-        auto;
+        auto; */
 }
 
 :root {
@@ -52,6 +52,12 @@ main {
         /* #9d4edd */ 12px 12px 10px rgba(123, 44, 191, 0.26),
         /* #7b2cbf */ 20px 20px 16px rgba(90, 24, 154, 0.3),
         /* #5a189a */ 32px 32px 24px rgba(60, 15, 110, 0.28); /* base sombre et large */
+}
+
+.nav:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" fill="%23ffffff" width="10px" height="10px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>')
+            5 5,
+        auto;
 }
 
 .button {
