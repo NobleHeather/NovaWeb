@@ -6,7 +6,7 @@ Max Caneva : 100 000 mots
 
 Redonner le protocole en début de session :
 
-<!--* 1h15 -->
+<!--* 7h30 -->
 
 Hey, Nova :) On commence une nouvelle session de travail, je te redonne le protocole :
 

@@ -18,6 +18,28 @@ input[type=checkbox] {
   transform: translateY(1px);
 }
 
+#stop {
+  fill: #f554bb;
+}
+#stop:hover {
+  fill: #7b2cbf;
+}
+#stop:hover:active {
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+#lire {
+  fill: #2a003f;
+}
+#lire:hover {
+  fill: #fceff9;
+}
+#lire:hover:active {
+  box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.6);
+  transform: translateY(1px);
+}
+
 body,
 p {
   font-family: "Poiret One", sans-serif; /* narration par défaut */
@@ -50,6 +72,181 @@ h5,
 
 .modal-body a {
   text-decoration: none;
+}
+
+#tailleTel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#PageTel {
+  /* Inspiré de : https://codepen.io/kiranpate1/pen/ZYEBmeW */
+  /* background: #383838; */
+  /* cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" fill="%23ffffff" width="10px" height="10px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>')
+          5 5,
+      auto; */
+  --press-desktop: 0.3s ease;
+  --press-mobile: 0.2s ease;
+  --gap: 4px;
+  --light: #ff8fab;
+  /* .button-light svg path {
+  stroke: #ff8fab !important;
+  } */
+}
+#PageTel main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+#PageTel .clavier-container {
+  position: relative;
+  padding: 30px;
+  /* border: solid 1px red; */
+  /* background-color: #ffc2d1; */
+  /* border-radius: 20px; */
+  /* background: rgba(255, 255, 255, 0.05); */
+  /* box-shadow: 0 0 30px rgba(0, 255, 136, 0.2); */
+}
+#PageTel .nav {
+  /* display: flex; */
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--gap);
+  gap: var(--gap);
+  padding: calc(var(--gap) * 4);
+  border-radius: 10px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fbe6ff, #e0aaff, #c77dff, #b86bff);
+  box-shadow: 2px 2px 3px rgba(199, 125, 255, 0.18), 6px 6px 6px rgba(157, 78, 221, 0.22), 12px 12px 10px rgba(123, 44, 191, 0.26), 20px 20px 16px rgba(90, 24, 154, 0.3), 32px 32px 24px rgba(60, 15, 110, 0.28); /* base sombre et large */
+}
+#PageTel .nav:hover {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" stroke="%23ffffff" fill="%23ffffff" width="10px" height="10px" viewBox="0 0 10.04 10.04"><circle cx="5.02" cy="5.02" r="4.52"/></svg>') 5 5, auto;
+}
+#PageTel .button {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  transform: translateZ(0);
+  background: #460763;
+  overflow: hidden;
+}
+#PageTel .button-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.2s filter;
+}
+#PageTel .frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: rgb(139, 76, 221); /* entre #c77dff et #9d4edd */
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 0 2px rgba(90, 24, 154, 0.6), inset 0 0 16px rgba(199, 125, 255, 0.1), inset 0 0 0 0 rgba(90, 24, 154, 0.8);
+  filter: brightness(1);
+  transform: translate3d(0, 0, 0);
+  transition: 0.2s;
+}
+#PageTel .frame span {
+  color: #ffb3c6; /* rose clair, à ajuster selon besoin */
+  font-weight: 700;
+  font-size: 1.5rem; /* ou ce que tu veux */
+}
+#PageTel #star {
+  display: inline-block;
+  transform: translateY(-0.05em);
+}
+#PageTel .button.hover .frame {
+  box-shadow: inset 0 0 0 2px rgba(90, 24, 154, 0.6), inset 0 0 16px rgba(199, 125, 255, 0.1), inset 0 0 0 0 rgba(90, 24, 154, 0.8); /* couche interne sombre invisible pour le moment */
+  transition: var(--press-desktop);
+}
+#PageTel .button.press .frame {
+  box-shadow: 0 0 0 3px rgba(90, 24, 154, 0.5), inset 0 0 0 2px rgba(90, 24, 154, 0.6), inset 0 0 16px rgba(199, 125, 255, 0.1), inset 4px 4px 4px 2px rgba(90, 24, 154, 0.9); /* effet d’enfoncement fort */
+  filter: brightness(0.8);
+}
+#PageTel svg {
+  width: 24px;
+  transform: scale(1);
+  transition: var(--press-desktop);
+}
+#PageTel .button.press svg {
+  transform: scale(0.91);
+}
+#PageTel svg path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#PageTel .frame svg path {
+  stroke: rgba(255, 235, 255, 0.85);
+  stroke-width: 1.5px;
+}
+#PageTel .light {
+  position: absolute;
+  top: -117%;
+  left: -132%;
+  /* transform: translate(-50%, -50%); */
+  width: 100%;
+  height: 100%;
+  /* background: radial-gradient(
+      ellipse 100% 75% at center,
+      rgba(255, 143, 171, 1) 80px,
+      rgba(255, 194, 209, 1) 130px,
+      rgba(255, 255, 255, 1) 200px
+  ); */
+  pointer-events: none;
+  z-index: -1;
+}
+#PageTel .button-light {
+  position: absolute;
+  display: flex;
+  gap: calc(var(--gap) + 4px);
+  filter: blur(0.5px);
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}
+#PageTel .button-light div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  /*   box-shadow: inset 0 0 0 1.5px var(--light); */
+}
+#PageTel .button-light svg path {
+  stroke: var(--light);
+  stroke-width: 1.5px;
+}
+@media screen and (max-width: 500px) {
+  #PageTel .frame {
+    transition: var(--press-mobile);
+  }
+  #PageTel svg {
+    transition: var(--press-mobile);
+  }
 }
 
 /*!
