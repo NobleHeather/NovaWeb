@@ -1,6 +1,15 @@
 # TODO - Projet site "Aliénor & Nova"
 
+<!-- * ATTENTION !!! Les bouts de html injectés doivent être en .partial sinon live serveur les bousille -->
+
 <!--! Now :  -->
+
+-   Relier clavier tel au questionnaire
+-   L'audio du répondeur ne se déclenche automatiquement que la première fois qu'on arrrive sur cette page
+-   Capturer choix 0 à 6 pour le camembert + si on revient sur cette page pop-up "modifier votre choix ?" ou "vous avez déjà choisi la fin de l'histoire !"
+-   Si on va sur le questionnaire avant d'avoir choisi la fin de l'histoire : ajouter dans la page du questionnaire "voulez-vous voter pour la fin de l'histoire"
+-   Faire une page pour l'option #
+-   Page centrale galaxie (cf + bas)
 
 6. Affichage complet du sommaire après lecture (retour depuis camembert)
    Très bonne idée. Pour le faire :
@@ -54,10 +63,10 @@ Chapitre nova avec plein de convers : galaxie. Faire un système de galaxie de p
 
 ## 📋 Étape 2 – Questionnaire à choix multiples
 
--   [ ] Implémenter le QCM en HTML + JS
--   [ ] Réactions dynamiques : vert si bon, rouge si faux
--   [ ] Pas de base de données requise à ce stade
--   [ ] Ajouter une page de correction ou des explications après validation (si souhaité)
+-   [x] Implémenter le QCM en HTML + JS
+-   [x] Réactions dynamiques : vert si bon, rouge si faux
+-   [x] Pas de base de données requise à ce stade
+-   [x] Ajouter une page de correction ou des explications après validation (si souhaité)
 
 ---
 
