@@ -22,7 +22,9 @@ sommaireList.innerHTML = fullSommaireHtml;
 }
 Tu pourrais générer fullSommaireHtml en JS à partir d’un tableau global des titres à ce moment-là.
 
-Souhaites-tu que je te code un exemple de ça ?
+<!--! Galaxie -->
+
+Chapitre nova avec plein de convers : galaxie. Faire un système de galaxie de points à relier. La convers débute en 1, on clique, on ouvre le texte, on choisi 1.1 ou 1.2 à la fin, ça crée un chemin vers le point suivant etc.
 
 ## 🟣 Préparatifs (à faire une seule fois)
 

@@ -1,88 +1,101 @@
 // pour injection dans structure
 function initPhone() {
-    const clavier = document.getElementById("mon-clavier");
-    if (!clavier) return;
+    /* <!-- initPhone: root injection-safe (PageTel / tailleTel / mon-clavier) --> */
+    const root =
+        document.getElementById("PageTel") ||
+        document.getElementById("tailleTel") ||
+        document.getElementById("mon-clavier");
 
-    // tout le code ici
-    const main = document.querySelector("main");
-    const nav = document.querySelector(".nav");
-    const buttons = document.querySelectorAll(".button");
-    const light = document.querySelector(".light");
-    const svgs = document.querySelectorAll("svg");
-    const buttonLight = document.querySelector(".button-light");
-    const buttonLights = document.querySelectorAll(".button-light div");
+    if (!root) return;
 
-    window.onload = () => {
+    /* <!-- tel.js: scope all queries to root to avoid cross-page pollution --> */
+    const main = root; // <-- au lieu de document.querySelector("main")
+    const nav = root.querySelector(".nav");
+    const buttons = root.querySelectorAll(".button");
+    const light = root.querySelector(".light");
+
+    // const svgs = document.querySelectorAll("svg");
+    /* <!-- tel.js: only clone svgs that belong to the phone keypad area --> */
+    const svgSources = root.querySelectorAll("svg");
+
+    const buttonLight = root.querySelector(".button-light");
+    const buttonLights = root.querySelectorAll(".button-light div");
+
+    /* <!-- safety: abort if key elements missing --> */
+    if (!nav || !light || !buttonLight) return;
+
+    /* <!-- injection-safe init instead of window.onload --> */
+    requestAnimationFrame(() => {
         const navRect = nav.getBoundingClientRect();
         const centerX = navRect.left + navRect.width / 2;
         const centerY = navRect.top + navRect.height / 2;
         light.style.transform = `translate(${centerX}px, ${centerY}px)`;
-    };
+    });
 
-    for (let i = 0; i < svgs.length; i++) {
-        const svg = svgs[i].cloneNode(true);
-        buttonLights[i].appendChild(svg);
+    // for (let i = 0; i < svgs.length; i++) {
+    //     const svg = svgs[i].cloneNode(true);
+    //     buttonLights[i].appendChild(svg);
+    // }
+    /* <!-- clone svgs into the button lights (scoped) --> */
+    for (let i = 0; i < svgSources.length; i++) {
+        const svg = svgSources[i].cloneNode(true);
+        buttonLights[i]?.appendChild(svg);
     }
 
     for (let i = 0; i < 4; i++) {
         const newButtonLight = buttonLight.cloneNode(true);
         newButtonLight.classList.add("glare");
         newButtonLight.style.filter = `blur(${Math.pow(i * 1.5, 2)}px)`;
+        /* <!-- glare append inside phone root ONLY (avoid covering other UI) --> */
         main.appendChild(newButtonLight);
     }
 
-    const buttonLightsAll = document.querySelectorAll(".button-light");
+    const buttonLightsAll = root.querySelectorAll(".button-light");
 
+    /* <!-- tel.js: avoid relying on global 'event' in helpers --> */
     window.addEventListener("mousemove", (event) => {
-        var x = event.clientX;
-        var y = event.clientY;
-        // light.style.transform = `translate(${x}px,${y}px)`;
+        const x = event.clientX;
+        const y = event.clientY;
 
-        var s = calculateShadow();
-        //     var shadow = `
-        //   ${s.x * 2.6}px ${s.y * 2.6}px 1.5px rgba(0, 0, 0, 0.081),
-        //   ${s.x * 5.8}px ${s.y * 5.8}px 3.4px rgba(0, 0, 0, 0.12),
-        //   ${s.x * 9.8}px ${s.y * 9.8}px 5.6px rgba(0, 0, 0, 0.15),
-        //   ${s.x * 14.8}px ${s.y * 14.8}px 8.5px rgba(0, 0, 0, 0.174),
-        //   ${s.x * 21.3}px ${s.y * 21.3}px 12.3px rgba(0, 0, 0, 0.195),
-        //   ${s.x * 30.1}px ${s.y * 30.1}px 17.4px rgba(0, 0, 0, 0.216),
-        //   ${s.x * 42.7}px ${s.y * 42.7}px 24.6px rgba(0, 0, 0, 0.24),
-        //   ${s.x * 62.1}px ${s.y * 62.1}px 35.8px rgba(0, 0, 0, 0.27),
-        //   ${s.x * 95.6}px ${s.y * 95.6}px 55.1px rgba(0, 0, 0, 0.309),
-        //   ${s.x * 170}px ${s.y * 170}px 98px rgba(0, 0, 0, 0.39)
-        // `;
-        //!     var shadow = `
-        //!   A CALCULER
-        // !  `;
-
-        //! nav.style.boxShadow = shadow;
+        const s = calculateShadowXY(x, y);
 
         var lightRadius = 400;
 
         const opacity = easeInQuad(
-            calculateIntensity(lightRadius / 3, lightRadius * 1.3)
+            calculateIntensityXY(x, y, lightRadius / 3, lightRadius * 1.3)
         );
+
         for (let i = 0; i < buttonLightsAll.length; i++) {
             buttonLightsAll[i].style.opacity = 0.3 + 0.7 * opacity;
         }
 
-        buttons.forEach((item, i) => {
+        buttons.forEach((item) => {
             const angle = calculateAngle(item, x, y);
             const scaleY =
                 10 -
-                easeOutQuint(calculateIntensity(0, lightRadius * 1.4)) * 10;
-            item.querySelector(
-                ".button-bg"
-            ).style.transform = `rotateZ(${angle}deg) scaleY(${scaleY})`;
+                easeOutQuint(calculateIntensityXY(x, y, 0, lightRadius * 1.4)) *
+                    10;
+
+            const bg = item.querySelector(".button-bg");
+            if (bg) {
+                bg.style.transform = `rotateZ(${angle}deg) scaleY(${scaleY})`;
+            }
         });
     });
+
+    /* =========================
+       Anciennes fonctions (utilisaient 'event' global)
+       Gardées pour ne pas supprimer, mais plus utilisées.
+       ========================= */
 
     function calculateShadow() {
         const rect = nav.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
+        // eslint-disable-next-line no-undef
         const deltaX = event.clientX - centerX;
+        // eslint-disable-next-line no-undef
         const deltaY = event.clientY - centerY;
 
         const angle = Math.atan2(deltaY, deltaX);
@@ -105,8 +118,61 @@ function initPhone() {
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
 
+        // eslint-disable-next-line no-undef
         const deltaX = event.clientX - centerX;
+        // eslint-disable-next-line no-undef
         const deltaY = event.clientY - centerY;
+        const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+
+        let intensity = 0;
+
+        if (distance > innerRadius && distance <= outerRadius) {
+            intensity = (distance - innerRadius) / (outerRadius - innerRadius);
+        } else if (distance > outerRadius) {
+            intensity = 1;
+        } else if (distance <= innerRadius) {
+            intensity = 0;
+        }
+
+        return intensity;
+    }
+
+    /* =========================
+       Nouvelles fonctions (safe)
+       ========================= */
+
+    /* <!-- tel.js: shadow calc without global event --> */
+    function calculateShadowXY(cursorX, cursorY) {
+        const rect = nav.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const deltaX = cursorX - centerX;
+        const deltaY = cursorY - centerY;
+
+        const angle = Math.atan2(deltaY, deltaX);
+        const maxOffset = 3;
+
+        const detectionRadius = rect.width * 2;
+        const distance = Math.min(
+            maxOffset,
+            (Math.sqrt(deltaX ** 2 + deltaY ** 2) / detectionRadius) * maxOffset
+        );
+
+        const offsetX = Math.cos(angle) * distance;
+        const offsetY = Math.sin(angle) * distance;
+
+        return { x: -offsetX, y: -offsetY };
+    }
+
+    /* <!-- tel.js: intensity calc without global event --> */
+    function calculateIntensityXY(cursorX, cursorY, innerRadius, outerRadius) {
+        const rect = nav.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const deltaX = cursorX - centerX;
+        const deltaY = cursorY - centerY;
         const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
 
         let intensity = 0;
@@ -143,28 +209,52 @@ function initPhone() {
         return t * t;
     }
 
-    buttons.forEach((item, i) => {
-        item.addEventListener("mouseover", () => {
-            item.classList.add("hover");
-        });
-        item.addEventListener("mouseout", () => {
-            item.classList.remove("hover");
-        });
-        item.addEventListener("mousedown", () => {
-            item.classList.add("press");
-        });
-        item.addEventListener("mouseup", () => {
-            item.classList.remove("press");
-        });
-        item.addEventListener("touchstart", () => {
-            item.classList.add("press");
-        });
+    buttons.forEach((item) => {
+        item.addEventListener("mouseover", () => item.classList.add("hover"));
+        item.addEventListener("mouseout", () => item.classList.remove("hover"));
+        item.addEventListener("mousedown", () => item.classList.add("press"));
+        item.addEventListener("mouseup", () => item.classList.remove("press"));
+        item.addEventListener("touchstart", () => item.classList.add("press"));
         item.addEventListener("touchend", () => {
-            setTimeout(function () {
-                item.classList.remove("press");
-            }, 300);
+            setTimeout(() => item.classList.remove("press"), 300);
         });
     });
 }
 
-// window.initPhone = initPhone;
+window.initPhone = initPhone;
+
+/* <!-- tel.js: DO NOT auto-run on DOMContentLoaded when using injected pages -->
+   Sinon : initPhone() part avant l’injection OU en conflit avec reader.js.
+   C’est reader.js qui doit appeler window.initPhone() après injection.
+*/
+// window.addEventListener("DOMContentLoaded", () => {
+//     initPhone();
+// });
+
+// fetch("audio.html")
+//     .then((response) => response.text())
+//     .then((data) => {
+//         const container = document.getElementById("audio-container");
+//         if (container) {
+//             container.innerHTML = data;
+//         } else {
+//             console.warn("audio-container introuvable dans le DOM");
+//         }
+//     });
+
+// window.addEventListener("DOMContentLoaded", () => {
+//     const lecteur = document.getElementById("lecteur");
+
+//     const hasVisited = localStorage.getItem("audioPageVisited");
+
+//     if (!hasVisited) {
+//         lecteur?.play();
+//         localStorage.setItem("audioPageVisited", "true");
+//     }
+
+//      Bouton "Appeler" réactive manuellement l'audio
+//     const playBtn = document.getElementById("play");
+//     playBtn?.addEventListener("click", () => {
+//         lecteur?.play();
+//     });
+// });

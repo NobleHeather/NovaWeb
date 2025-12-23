@@ -58,20 +58,53 @@ function isInSommaire(text) {
 //         })
 //         .catch((error) => console.error("Erreur chargement article :", error));
 // }
+
 function loadPage(pageNumber) {
-    fetch(`page${pageNumber}.html`)
+    /* <!-- cache-bust + no-store --> */
+    /* <!-- fetch fragment (partial) to avoid live-server injection --> */
+    fetch(`page${pageNumber}.partial?v=${Date.now()}`, {
+        cache: "no-store",
+    })
         .then((response) => response.text())
         .then((data) => {
             const contentDiv = document.getElementById("content");
             contentDiv.innerHTML = data;
 
-            // Appel de la fonction initPhone pour la page téléphone (ex : page 1)
-            if (pageNumber === 1 && typeof initPhone === "function") {
+            /* <!-- initPhone call (use tel.js), + collapse rebind fix --> */
+            if (pageNumber === 1) {
                 setTimeout(() => {
                     const clavier = document.getElementById("tailleTel");
-                    if (clavier) {
-                        initPhone();
+
+                    // IMPORTANT : on appelle la version de tel.js (scopée), pas un initPhone "global" dans reader.js
+                    if (clavier && typeof window.initPhone === "function") {
+                        window.initPhone();
                     }
+
+                    /* <!-- rebind collapse fix (do NOT collapse the trigger itself) --> */
+                    const triggers = document.querySelectorAll(
+                        '[data-bs-toggle="collapse"]'
+                    );
+
+                    triggers.forEach((trigger) => {
+                        const targetSelector =
+                            trigger.getAttribute("data-bs-target");
+                        if (!targetSelector) return;
+
+                        const targetEl = document.querySelector(targetSelector);
+                        if (!targetEl) return;
+
+                        bootstrap.Collapse.getOrCreateInstance(targetEl, {
+                            toggle: false,
+                        });
+                    });
+
+                    /* <!-- ancien rebind collapse (désactivé) : collapse le bouton au lieu de la cible --> */
+                    // const triggers = document.querySelectorAll(
+                    //     '[data-bs-toggle="collapse"]'
+                    // );
+                    // triggers.forEach((trigger) => {
+                    //     new bootstrap.Collapse(trigger);
+                    // });
                 }, 100);
             }
 
@@ -90,7 +123,8 @@ function loadPage(pageNumber) {
         .catch((error) => console.error("Erreur chargement article :", error));
 }
 
-// pour injection dans structure
+/* <!-- initPhone legacy (DÉSACTIVÉ) : cause icônes parasites + conflits avec tel.js --> */
+/*
 function initPhone() {
     // tout le code ici
     const main = document.querySelector("main");
@@ -125,26 +159,8 @@ function initPhone() {
     window.addEventListener("mousemove", (event) => {
         var x = event.clientX;
         var y = event.clientY;
-        // light.style.transform = `translate(${x}px,${y}px)`;
 
         var s = calculateShadow();
-        //     var shadow = `
-        //   ${s.x * 2.6}px ${s.y * 2.6}px 1.5px rgba(0, 0, 0, 0.081),
-        //   ${s.x * 5.8}px ${s.y * 5.8}px 3.4px rgba(0, 0, 0, 0.12),
-        //   ${s.x * 9.8}px ${s.y * 9.8}px 5.6px rgba(0, 0, 0, 0.15),
-        //   ${s.x * 14.8}px ${s.y * 14.8}px 8.5px rgba(0, 0, 0, 0.174),
-        //   ${s.x * 21.3}px ${s.y * 21.3}px 12.3px rgba(0, 0, 0, 0.195),
-        //   ${s.x * 30.1}px ${s.y * 30.1}px 17.4px rgba(0, 0, 0, 0.216),
-        //   ${s.x * 42.7}px ${s.y * 42.7}px 24.6px rgba(0, 0, 0, 0.24),
-        //   ${s.x * 62.1}px ${s.y * 62.1}px 35.8px rgba(0, 0, 0, 0.27),
-        //   ${s.x * 95.6}px ${s.y * 95.6}px 55.1px rgba(0, 0, 0, 0.309),
-        //   ${s.x * 170}px ${s.y * 170}px 98px rgba(0, 0, 0, 0.39)
-        // `;
-        //!     var shadow = `
-        //!   A CALCULER
-        // !  `;
-
-        //! nav.style.boxShadow = shadow;
 
         var lightRadius = 400;
 
@@ -255,6 +271,7 @@ function initPhone() {
         });
     });
 }
+*/
 
 // window.initPhone = initPhone;
 
