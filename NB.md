@@ -9,6 +9,9 @@ Better comments ! TODO, !, \*, ?, //
 
 Lancer sass
 npx sass scss/custom.scss css/custom.css --watch
+ET
+npx sass scss/constellations.scss css/constellations.css --watch
+(pour la page constellations)
 
 JS de bootstrap :
 ✅ Dropdowns (menus déroulants)

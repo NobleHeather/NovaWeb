@@ -35,6 +35,10 @@ Tu pourrais générer fullSommaireHtml en JS à partir d’un tableau global des
 
 Chapitre nova avec plein de convers : galaxie. Faire un système de galaxie de points à relier. La convers débute en 1, on clique, on ouvre le texte, on choisi 1.1 ou 1.2 à la fin, ça crée un chemin vers le point suivant etc.
 
+## PROBLEMES A TRAITER
+
+-   On a 3 erreurs jaunes dans le CSS custom : un -webkit-appearance: textfield; et deux -webkit-appearance: button; qui sont "nonstandard : avoid" d'après vs code
+
 ## 🟣 Préparatifs (à faire une seule fois)
 
 -   [x] Configurer VS Code : extensions utiles (Live Server, Prettier…)

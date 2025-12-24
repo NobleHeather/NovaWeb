@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Conversations avec l’IA</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Dekko&family=Oxanium&family=Poiret+One&family=Princess+Sofia&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/custom.css" />
+        <link rel="stylesheet" href="css/constellations.css" />
+    </head>
+    <body>
+        <!-- page constellation -->
+        <main id="constellation-page">
+            <!-- fond galaxie -->
+            <div id="galaxy-layer">
+                <!-- canvas / svg plus tard -->
+            </div>
+
+            <!-- header discret -->
+            <header id="constellation-header">
+                <div class="meta">
+                    <span class="title">Titre de l’œuvre</span>
+                    <span class="author">— Autrice</span>
+                </div>
+            </header>
+
+            <!-- zone centrale : texte OU sommaire -->
+            <section id="central-panel">
+                <!-- état 1 : texte + choix -->
+                <div id="story-panel">
+                    <div id="story-text">
+                        <!-- texte injecté -->
+                    </div>
+
+                    <div id="story-options">
+                        <!-- boutons de choix -->
+                    </div>
+
+                    <button id="open-summary">Sommaire</button>
+                </div>
+
+                <!-- état 2 : sommaire -->
+                <div id="summary-panel" hidden>
+                    <div id="summary-content">
+                        <!-- liste des constellations / nœuds -->
+                    </div>
+
+                    <button id="close-summary">Retour au texte</button>
+                </div>
+            </section>
+
+            <!-- navigation globale -->
+            <nav id="constellation-navigation">
+                <button id="prev-page" aria-label="Page précédente">←</button>
+
+                <button id="next-page" aria-label="Page suivante">→</button>
+            </nav>
+        </main>
+        <script src="js/constellations.js"></script>
+    </body>
+</html>
