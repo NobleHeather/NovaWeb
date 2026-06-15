@@ -4,12 +4,12 @@
 
 <!--! Now :  -->
 
+-   Page centrale galaxie (cf + bas)
 -   Relier clavier tel au questionnaire
 -   L'audio du répondeur ne se déclenche automatiquement que la première fois qu'on arrrive sur cette page
 -   Capturer choix 0 à 6 pour le camembert + si on revient sur cette page pop-up "modifier votre choix ?" ou "vous avez déjà choisi la fin de l'histoire !"
 -   Si on va sur le questionnaire avant d'avoir choisi la fin de l'histoire : ajouter dans la page du questionnaire "voulez-vous voter pour la fin de l'histoire"
 -   Faire une page pour l'option #
--   Page centrale galaxie (cf + bas)
 
 6. Affichage complet du sommaire après lecture (retour depuis camembert)
    Très bonne idée. Pour le faire :
@@ -31,7 +31,8 @@ sommaireList.innerHTML = fullSommaireHtml;
 }
 Tu pourrais générer fullSommaireHtml en JS à partir d’un tableau global des titres à ce moment-là.
 
-<!--! Galaxie -->
+<!-- Galaxie : en cours -->
+<!-- ?cf convers Nova pour suite du taf -->
 
 Chapitre nova avec plein de convers : galaxie. Faire un système de galaxie de points à relier. La convers débute en 1, on clique, on ouvre le texte, on choisi 1.1 ou 1.2 à la fin, ça crée un chemin vers le point suivant etc.
 
