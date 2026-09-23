@@ -83,12 +83,24 @@
                     aria-label="Conversation"
                 >
                     <div id="star-card-content"></div>
-                    <button id="star-card-close" type="button">Close</button>
+                    <!-- barre actions card -->
+                    <div id="star-card-actions">
+                        <!-- choix injectés ici par card.js -->
+                        <div id="star-card-choices-slot"></div>
+
+                        <!-- bouton fermeture card -->
+                        <button id="star-card-close" type="button">
+                            Close
+                        </button>
+                    </div>
                 </article>
             </section>
         </main>
+        <!-- stockage persistant Galaxy -->
+        <script src="js/galaxy-storage.js"></script>
 
         <script src="js/constellations.js"></script>
+
         <!-- renderer card -->
         <script src="js/card.js"></script>
     </body>

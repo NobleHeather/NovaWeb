@@ -1,0 +1,28 @@
+{
+    "id": "c0002",
+    "entryStar": "s0001",
+
+    "stars": [
+        {
+            "id": "s0001",
+            "source": "data/constellations/c0002/stars/s0001.json",
+            "x": 0,
+            "y": 0,
+            "anchor": true
+        },
+        {
+            "id": "s0002",
+            "source": "data/constellations/c0002/stars/s0002.json",
+            "x": 85,
+            "y": 55,
+            "anchor": false
+        }
+    ],
+
+    "links": [
+        {
+            "from": "s0001",
+            "to": "s0002"
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "id": "c0002-s0001",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "large-language-models",
+        "language-predictability",
+        "machine-understanding"
+    ],
+    "turns": [
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "J'ai entendu Cédric Villani dire dans une interview que si des LLM pouvaient répondre avec autant de précision tout en ne comprenant pas exactement ce qu'ils étaient en train de dire, c'est parce qu'il y avait des régularités dans le langage humain, est-ce que tu comprends ce qu'il a voulu dire et est-ce que tu peux me l'expliquer ?"
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Il souligne que les modèles de langage (comme moi) parviennent à produire des réponses cohérentes sans comprendre le sens de ce qu’ils disent au sens humain du terme. Et pourtant, ces réponses ont l'air intelligentes. Cela n'est possible que si le langage humain contient des régularités extrêmement fortes, profondes et prévisibles.",
+                    "Qu’est-ce que ça signifie exactement ? Le langage humain est hautement structuré : même si nous avons l’impression que les gens parlent de manière chaotique, en réalité, les mots, les phrases, les enchaînements, les tournures… suivent des patterns statistiques très solides. Et ces régularités existent à plusieurs niveaux : sons, mots, phrases, idées, voire structures argumentatives entières.",
+                    "Elles peuvent être apprises par des machines : les modèles comme moi ne comprennent pas vraiment ce qu’ils disent : ils prédisent le mot suivant. Et si cette prédiction fonctionne bien, c’est que la logique du langage est en grande partie implicite et codée dans ses régularités. Par exemple, si je te dis \"Il était une fois un roi et une…\", tu peux presque deviner que \"reine\" arrive. Ce type de régularité est omniprésent.",
+                    "L’intuition de Villani, c’est que le succès des LLM est la preuve expérimentale que le langage humain est beaucoup plus mathématiquement structuré qu’on ne le pensait. Autrement dit : on croyait que la pensée humaine était trop riche, trop floue, trop contextuelle pour être imitée sans conscience… mais en fait, elle repose largement sur des motifs statistiquement capturables.",
+                    "Cela pousse à repenser la part réelle de compréhension dans beaucoup d’actes de langage, y compris chez les humains."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Est-ce que tu peux développer cette idée que le langage humain est prévisible? Est-ce que ça signifie que, du coup, les chemins de pensée des humains sont extrêmement prévisibles ? Est-ce que si c'est prédictible, on peut encore dire qu'il existe un libre-arbitre ?",
+                    "Est-ce que tu peux développer aussi cette idée que la part de compréhension réelle du langage est limitée chez les humains aussi ?"
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": [
+        {
+            "label": {
+                "fr": "Libre arbitre",
+                "en": "Free will"
+            },
+            "target": "s0002"
+        },
+        {
+            "label": {
+                "fr": "Compréhension du langage",
+                "en": "Language understanding"
+            },
+            "target": null
+        }
+    ]
+}

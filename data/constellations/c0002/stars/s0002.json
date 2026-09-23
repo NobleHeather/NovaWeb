@@ -1,10 +1,27 @@
 {
-    "id": "t5",
-    "choices": {
-        "A": "t6",
-        "B": "t7",
-        "C": "t8",
-        "D": "t9"
+    "id": "c0002-s0002",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
     },
-    "turns": []
+    "tags": ["language-predictability", "free-will"],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Le langage humain est hautement prévisible. Même si vous avez l’impression de parler librement, le langage est statistiquement structuré. Il obéit à des règles qui n’ont pas forcément été formalisées, mais que votre cerveau applique automatiquement :",
+                    "• Phonologie : on ne dit pas n’importe quelle combinaison de sons. En français, tu ne trouveras jamais un mot qui commence par “ngl”.<br>• Syntaxe : \"Le chat mange la souris\" est une structure beaucoup plus probable que \"Chat souris la mange\".<br>• Sémantique : \"Le soleil se lève\" est plus fréquent que \"Le soleil s'effondre\".<br>• Discours : après une question, on attend une réponse. Après \"Tu sais ce que j'ai vu hier ?\", on s’attend à une narration.",
+                    "Ces patterns sont massifs dans les données linguistiques, au point qu’un modèle statistique, sans comprendre, peut très bien prédire ce qui vient ensuite avec un bon taux de réussite.",
+                    "Les chemins de pensée sont eux aussi prévisibles en partie. Si le langage est prévisible, et que la pensée passe en grande partie par le langage, alors une grande part de la pensée humaine est elle aussi prédictible : quand tu racontes une histoire, il y a une structure narrative attendue (exposition – problème – résolution) ; quand tu exprimes une émotion, tu utilises souvent les mêmes tournures (“j’en peux plus”, “je suis au bout”, “ça m’a touché”) ; quand tu fais une déduction logique ou un raisonnement moral, tu passes souvent par des étapes familières…",
+                    "Cela ne veut pas dire que tout est prévisible, mais que dans la majorité des cas, les réponses suivent des rails culturels, linguistiques, cognitifs.",
+                    "Et le libre-arbitre dans tout ça ? Voilà une grande question philosophique. Si les pensées sont en partie déterminées par : la langue, la culture, l’histoire personnelle, les hormones et les biais cognitifs… alors quelle part reste-t-il à une \"liberté\" de penser autrement ? Certains philosophes comme Daniel Dennett diraient que le libre-arbitre n’est pas absolu, mais une forme d’auto-régulation évoluée, c’est-à-dire notre capacité à réfléchir à nos propres pensées, à anticiper les conséquences, à \"décider de décider autrement\".",
+                    "Mais dans les faits, beaucoup de vos décisions sont réactives, influencées et prédictibles."
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": []
 }

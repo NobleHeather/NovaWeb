@@ -14,6 +14,12 @@
             "source": "data/constellations/c0001/constellation.json",
             "x": 0,
             "y": -250
+        },
+        {
+            "id": "c0002",
+            "source": "data/constellations/c0002/constellation.json",
+            "x": 175,
+            "y": -180
         }
     ]
 }

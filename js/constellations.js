@@ -266,3 +266,250 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Erreur chargement Polaris :", error);
     }
 });
+
+/* <!-- Galaxy V1 : navigation graphe et filaments --> */
+(() => {
+    const SVG_NS = "http://www.w3.org/2000/svg";
+
+    /* <!-- registre constellations chargées --> */
+    const constellations = new Map();
+
+    /* <!-- identifiant global étoile --> */
+    function getGlobalStarId(constellationId, starId) {
+        return `${constellationId}-${starId}`;
+    }
+
+    /* <!-- recherche étoile dans constellation --> */
+    function getStar(constellation, starId) {
+        return constellation.stars.find((star) => star.id === starId);
+    }
+
+    /* <!-- test étoile lue --> */
+    function isRead(constellationId, starId) {
+        return window.GalaxyStorage.isStarRead(
+            getGlobalStarId(constellationId, starId),
+        );
+    }
+
+    /* <!-- parents d'une étoile --> */
+    function getParents(constellation, starId) {
+        return (constellation.links ?? [])
+            .filter((link) => link.to === starId)
+            .map((link) => link.from);
+    }
+
+    /*
+     * <!-- résolution destination clic -->
+     *
+     * Une étoile lue s'ouvre elle-même.
+     * Une étoile non lue remonte le graphe jusqu'à trouver
+     * l'étoile lue la plus proche.
+     * À défaut, retour à entryStar.
+     */
+    function resolveAccessibleStar(constellationId, constellation, starId) {
+        if (isRead(constellationId, starId)) {
+            return starId;
+        }
+
+        const visited = new Set();
+        let frontier = [starId];
+
+        while (frontier.length > 0) {
+            const nextFrontier = [];
+
+            for (const currentId of frontier) {
+                if (visited.has(currentId)) {
+                    continue;
+                }
+
+                visited.add(currentId);
+
+                for (const parentId of getParents(constellation, currentId)) {
+                    if (isRead(constellationId, parentId)) {
+                        return parentId;
+                    }
+
+                    nextFrontier.push(parentId);
+                }
+            }
+
+            frontier = nextFrontier;
+        }
+
+        return constellation.entryStar;
+    }
+
+    /* <!-- ouverture étoile selon progression --> */
+    function openFromGalaxy(constellationId, constellation, requestedStarId) {
+        const accessibleStarId = resolveAccessibleStar(
+            constellationId,
+            constellation,
+            requestedStarId,
+        );
+
+        const accessibleStar = getStar(constellation, accessibleStarId);
+
+        if (!accessibleStar) {
+            console.error(
+                "Étoile introuvable :",
+                constellationId,
+                accessibleStarId,
+            );
+            return;
+        }
+
+        window.GalaxyCard?.open(accessibleStar.source);
+    }
+
+    /* <!-- création couche SVG filaments --> */
+    function getFilamentLayer() {
+        const sky = document.getElementById("galaxy-test");
+
+        if (!sky) {
+            return null;
+        }
+
+        let svg = document.getElementById("galaxy-filaments");
+
+        if (!svg) {
+            svg = document.createElementNS(SVG_NS, "svg");
+            svg.id = "galaxy-filaments";
+            svg.setAttribute("aria-hidden", "true");
+
+            sky.prepend(svg);
+        }
+
+        return svg;
+    }
+
+    /* <!-- dessin filaments lus --> */
+    function renderFilaments() {
+        const svg = getFilamentLayer();
+
+        if (!svg) {
+            return;
+        }
+
+        svg.replaceChildren();
+
+        for (const [constellationId, entry] of constellations) {
+            const { constellationData, constellation } = entry;
+
+            for (const link of constellation.links ?? []) {
+                if (
+                    !isRead(constellationId, link.from) ||
+                    !isRead(constellationId, link.to)
+                ) {
+                    continue;
+                }
+
+                const from = getStar(constellation, link.from);
+                const to = getStar(constellation, link.to);
+
+                if (!from || !to) {
+                    continue;
+                }
+
+                const line = document.createElementNS(SVG_NS, "line");
+
+                /* <!-- conversion coordonnées monde vers écran --> */
+                const sky = document.getElementById("galaxy-test");
+                const skyRect = sky.getBoundingClientRect();
+
+                const centerX = skyRect.width / 2;
+                const centerY = skyRect.height / 2;
+
+                const x1 = centerX + constellationData.x + from.x;
+                const y1 = centerY + constellationData.y + from.y;
+
+                const x2 = centerX + constellationData.x + to.x;
+                const y2 = centerY + constellationData.y + to.y;
+
+                line.setAttribute("x1", x1);
+                line.setAttribute("y1", y1);
+                line.setAttribute("x2", x2);
+                line.setAttribute("y2", y2);
+                line.classList.add("galaxy-filament");
+
+                svg.appendChild(line);
+            }
+        }
+    }
+
+    /* <!-- branchement clics étoiles existantes --> */
+    function registerConstellation(constellationData, constellation) {
+        constellations.set(constellationData.id, {
+            constellationData,
+            constellation,
+        });
+
+        for (const starData of constellation.stars) {
+            const starElement = document.querySelector(
+                `[data-star-src="${starData.source}"]`,
+            );
+
+            if (!starElement) {
+                continue;
+            }
+
+            /*
+             * L'ancien createGalaxyStar possède déjà son listener.
+             * On intercepte donc le clic avant qu'il l'atteigne.
+             */
+            starElement.addEventListener(
+                "click",
+                (event) => {
+                    event.stopImmediatePropagation();
+
+                    openFromGalaxy(
+                        constellationData.id,
+                        constellation,
+                        starData.id,
+                    );
+                },
+                true,
+            );
+        }
+
+        renderFilaments();
+    }
+
+    /* <!-- chargement topologie Galaxy --> */
+    async function initialiseGalaxyNavigation() {
+        const galaxyResponse = await fetch("data/galaxy.json");
+
+        if (!galaxyResponse.ok) {
+            throw new Error(
+                `Impossible de charger data/galaxy.json (${galaxyResponse.status})`,
+            );
+        }
+
+        const galaxy = await galaxyResponse.json();
+
+        for (const constellationData of galaxy.constellations ?? []) {
+            const response = await fetch(constellationData.source);
+
+            if (!response.ok) {
+                throw new Error(
+                    `Impossible de charger ${constellationData.source} (${response.status})`,
+                );
+            }
+
+            const constellation = await response.json();
+
+            registerConstellation(constellationData, constellation);
+        }
+    }
+
+    /* <!-- actualisation après lecture étoile --> */
+    window.addEventListener("galaxy:star-read", () => {
+        renderFilaments();
+    });
+
+    /* <!-- lancement navigation Galaxy --> */
+    window.addEventListener("load", () => {
+        initialiseGalaxyNavigation().catch((error) => {
+            console.error("Erreur initialisation navigation Galaxy :", error);
+        });
+    });
+})();

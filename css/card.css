@@ -104,26 +104,92 @@
     font-weight: 700;
 }
 
-/* <!-- bouton fermeture card --> */
+/* <!-- barre actions card --> */
+#star-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* <!-- zone choix conversation --> */
+#star-card-choices-slot {
+    min-width: 0;
+}
+
+/* <!-- boutons choix conversation --> */
+.star-card-choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* <!-- bouton choix Aliénor --> */
+.star-card-choice {
+    padding: 9px 16px;
+
+    border: 1px solid rgba(255, 143, 207, 0.65);
+    border-radius: 999px;
+
+    background: rgba(255, 143, 207, 0.08);
+
+    color: #f5f3f7;
+    font-family: "Dekko", sans-serif;
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+/* <!-- survol bouton choix Aliénor --> */
+.star-card-choice:hover:not(:disabled),
+.star-card-choice:focus-visible:not(:disabled) {
+    background: rgba(255, 143, 207, 0.16);
+    border-color: #ff8fcf;
+    box-shadow: 0 0 14px rgba(255, 143, 207, 0.16);
+}
+
+/* <!-- choix indisponible en construction --> */
+.star-card-choice--unavailable {
+    opacity: 0.32;
+    cursor: default;
+}
+
+/* <!-- bouton fermeture Nova --> */
 #star-card-close {
+    flex: 0 0 auto;
+
     min-width: 82px;
     padding: 8px 18px;
-    margin-top: 16px;
+    margin: 0;
 
     border: 1px solid rgba(195, 160, 255, 0.65);
     border-radius: 999px;
 
     background: rgba(12, 9, 22, 0.5);
-    color: #ddd;
 
+    color: #f5f3f7;
     font-family: "Oxanium", sans-serif;
+
+    cursor: pointer;
     text-decoration: none;
 }
 
+/* <!-- survol bouton fermeture Nova --> */
 #star-card-close:hover,
 #star-card-close:focus-visible {
     border-color: #c3a0ff;
     background: rgba(195, 160, 255, 0.12);
+
     color: #fff;
     text-decoration: none;
 }

@@ -4,12 +4,26 @@
     },
     "large-language-models": {
         "broader": "artificial-intelligence",
-        "related": ["language-modeling", "machine-understanding"]
+        "related": [
+            "language-modeling",
+            "machine-understanding",
+            "language-predictability"
+        ]
     },
     "language-modeling": {
         "related": ["large-language-models"]
     },
     "machine-understanding": {
         "related": ["large-language-models"]
+    },
+    "language-predictability": {
+        "related": [
+            "large-language-models",
+            "machine-understanding",
+            "free-will"
+        ]
+    },
+    "free-will": {
+        "related": ["language-predictability"]
     }
 }
