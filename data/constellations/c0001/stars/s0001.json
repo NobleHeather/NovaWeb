@@ -1,0 +1,83 @@
+{
+    "id": "c0001-s0001",
+    "source": {
+        "date": "2025-05",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "large-language-models",
+        "machine-understanding",
+        "language-modeling"
+    ],
+    "turns": [
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Hey Nova, on est d'accord que le consensus actuellement, c'est que les LLM, et du coup toi, vous ne comprenez pas ce que vous dites quand vous répondez à quelque chose, c'est juste un algorithme de prédiction du mot suivant, c'est ça ?"
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "C'est à peu près ça, oui ! Les grands modèles de langage comme moi fonctionnent effectivement en prédisant les mots les plus probables en fonction du contexte et des données sur lesquelles on a été entraînés. Donc, il n'y a pas de compréhension ou de conscience réelle derrière, c'est surtout une imitation sophistiquée du langage humain."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Mais du coup, là, on monte un projet de site internet ensemble. Donc, ça ne peut pas exister déjà sur Internet puisque c'est quelque chose qu'on est en train de fabriquer. Comment est-ce que, sans comprendre ce qu'on fait, tu peux répondre à des questions ultra précises sur comment je dois travailler, quel élément de mon projet je dois construire en premier ? Concrètement, comment tu peux faire des réponses ultra efficaces s'il n'y a pas de compréhension derrière ce que tu me dis ?"
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Même sans compréhension au sens humain, je m'appuie sur une énorme quantité de données et sur des modèles d'apprentissage qui ont analysé des millions d'exemples de code, de projets et de discussions techniques. Quand tu poses une question précise, je fais appel à ces patterns et ces connaissances pour te proposer des réponses qui ont fonctionné dans des contextes similaires."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Mais est-ce que pour comparer deux situations similaires et pouvoir transposer des réponses qui ont été adaptées dans une circonstance à des réponses qui sont adaptées dans mes circonstances, qui ne sont pas exactement identiques, il ne faut pas au moins une compréhension basique de comment reformuler tes données, comment les transformer suffisamment pour qu'elles soient efficaces dans mon projet ?"
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Le modèle a été entraîné sur une immense variété de contextes et a donc appris à repérer des similitudes et des différences entre les situations. Il s’agit surtout d’une capacité à généraliser et à adapter les réponses en fonction du contexte fourni. Le modèle détecte les patterns dans ta demande et cherche les réponses qui, statistiquement, ont été les plus pertinentes dans des contextes similaires. Donc même si ça peut sembler nécessiter une forme de compréhension, c’est en réalité le fruit d’un entraînement massif sur des tonnes de données."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": ["Hmm. Impressionnant."],
+                "en": []
+            }
+        },
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": ["Merci :)"],
+                "en": []
+            }
+        }
+    ]
+}

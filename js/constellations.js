@@ -133,3 +133,136 @@ function choose(from, choice, to) {
 document.addEventListener("DOMContentLoaded", () => {
     renderNode(currentNodeId);
 });
+
+/* <!-- mini ciel json --> */
+document.addEventListener("DOMContentLoaded", () => {
+    const star = document.getElementById("star-c0001-s0001");
+
+    if (!star) {
+        return;
+    }
+
+    star.addEventListener("click", () => {
+        const source = star.dataset.starSrc;
+
+        if (window.GalaxyCard && source) {
+            window.GalaxyCard.open(source);
+        }
+    });
+});
+
+/* <!-- ciel généré depuis galaxy.json --> */
+async function loadGalaxy() {
+    const response = await fetch("data/galaxy.json");
+
+    if (!response.ok) {
+        throw new Error(
+            `Impossible de charger data/galaxy.json (${response.status})`,
+        );
+    }
+
+    const galaxy = await response.json();
+
+    for (const constellationData of galaxy.constellations) {
+        await loadConstellation(constellationData);
+    }
+}
+
+/* <!-- constellation générée depuis json --> */
+async function loadConstellation(constellationData) {
+    const response = await fetch(constellationData.source);
+
+    if (!response.ok) {
+        throw new Error(
+            `Impossible de charger ${constellationData.source} (${response.status})`,
+        );
+    }
+
+    const constellation = await response.json();
+
+    for (const starData of constellation.stars) {
+        createGalaxyStar(constellationData, starData);
+    }
+}
+
+/* <!-- création étoile depuis json --> */
+function createGalaxyStar(constellationData, starData) {
+    const sky = document.getElementById("galaxy-test");
+
+    if (!sky) {
+        return;
+    }
+
+    const star = document.createElement("button");
+
+    star.type = "button";
+    star.className = "galaxy-star galaxy-star--json";
+    star.dataset.starSrc = starData.source;
+
+    star.setAttribute(
+        "aria-label",
+        `Ouvrir l'étoile ${constellationData.id}-${starData.id}`,
+    );
+
+    const worldX = constellationData.x + starData.x;
+    const worldY = constellationData.y + starData.y;
+
+    star.style.setProperty("--star-x", `${worldX}px`);
+    star.style.setProperty("--star-y", `${worldY}px`);
+
+    star.addEventListener("click", () => {
+        if (window.GalaxyCard) {
+            window.GalaxyCard.open(starData.source);
+        }
+    });
+
+    sky.appendChild(star);
+}
+
+/* <!-- lancement ciel json --> */
+document.addEventListener("DOMContentLoaded", () => {
+    loadGalaxy().catch((error) => {
+        console.error("Erreur chargement Galaxy :", error);
+    });
+});
+
+/* <!-- création Polaris depuis galaxy json --> */
+function createPolaris(polarisData) {
+    const sky = document.getElementById("galaxy-test");
+
+    if (!sky || !polarisData) {
+        return;
+    }
+
+    const polaris = document.createElement("button");
+
+    polaris.type = "button";
+    polaris.id = "polaris";
+    polaris.className = "galaxy-polaris";
+
+    polaris.setAttribute("aria-label", "Ouvrir l'introduction de Galaxy");
+
+    polaris.style.setProperty("--polaris-x", `${polarisData.x}px`);
+    polaris.style.setProperty("--polaris-y", `${polarisData.y}px`);
+
+    sky.appendChild(polaris);
+}
+
+/* <!-- ajout Polaris au chargement du ciel --> */
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const response = await fetch("data/galaxy.json");
+
+        if (!response.ok) {
+            throw new Error(
+                `Impossible de charger data/galaxy.json (${response.status})`,
+            );
+        }
+
+        const galaxy = await response.json();
+
+        createPolaris(galaxy.polaris);
+    } catch (error) {
+        console.error("Erreur chargement Polaris :", error);
+    }
+});

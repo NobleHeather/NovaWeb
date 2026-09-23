@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
@@ -11,6 +11,8 @@
         />
         <link rel="stylesheet" href="css/custom.css" />
         <link rel="stylesheet" href="css/constellations.css" />
+        <!-- card étoile -->
+        <link rel="stylesheet" href="css/card.css" />
     </head>
     <body>
         <!-- page constellation -->
@@ -59,7 +61,35 @@
 
                 <button id="next-page" aria-label="Page suivante">→</button>
             </nav>
+
+            <!-- mini ciel json -->
+            <section id="galaxy-test" aria-label="Galaxy">
+                <!-- étoile 1 -->
+                <button
+                    id="star-c0001-s0001"
+                    class="galaxy-star"
+                    type="button"
+                    aria-label="Ouvrir la première étoile"
+                    data-star-src="data/constellations/c0001/stars/s0001.json"
+                ></button>
+            </section>
+
+            <!-- card conversation json -->
+            <section id="star-card-layer" hidden>
+                <article
+                    id="star-card"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Conversation"
+                >
+                    <div id="star-card-content"></div>
+                    <button id="star-card-close" type="button">Close</button>
+                </article>
+            </section>
         </main>
+
         <script src="js/constellations.js"></script>
+        <!-- renderer card -->
+        <script src="js/card.js"></script>
     </body>
 </html>

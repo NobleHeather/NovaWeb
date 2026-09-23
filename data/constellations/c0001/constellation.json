@@ -1,0 +1,13 @@
+{
+    "id": "c0001",
+    "entryStar": "s0001",
+    "stars": [
+        {
+            "id": "s0001",
+            "source": "data/constellations/c0001/stars/s0001.json",
+            "x": 0,
+            "y": 0,
+            "anchor": true
+        }
+    ]
+}

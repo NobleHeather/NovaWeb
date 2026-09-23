@@ -1,0 +1,19 @@
+{
+    "version": 1,
+
+    "polaris": {
+        "id": "polaris",
+        "x": 0,
+        "y": 0,
+        "type": "intro"
+    },
+
+    "constellations": [
+        {
+            "id": "c0001",
+            "source": "data/constellations/c0001/constellation.json",
+            "x": 0,
+            "y": -250
+        }
+    ]
+}

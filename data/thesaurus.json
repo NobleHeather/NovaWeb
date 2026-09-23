@@ -1,0 +1,15 @@
+{
+    "artificial-intelligence": {
+        "narrower": ["large-language-models"]
+    },
+    "large-language-models": {
+        "broader": "artificial-intelligence",
+        "related": ["language-modeling", "machine-understanding"]
+    },
+    "language-modeling": {
+        "related": ["large-language-models"]
+    },
+    "machine-understanding": {
+        "related": ["large-language-models"]
+    }
+}
