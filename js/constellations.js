@@ -226,47 +226,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-/* <!-- création Polaris depuis galaxy json --> */
-function createPolaris(polarisData) {
-    const sky = document.getElementById("galaxy-test");
-
-    if (!sky || !polarisData) {
-        return;
-    }
-
-    const polaris = document.createElement("button");
-
-    polaris.type = "button";
-    polaris.id = "polaris";
-    polaris.className = "galaxy-polaris";
-
-    polaris.setAttribute("aria-label", "Ouvrir l'introduction de Galaxy");
-
-    polaris.style.setProperty("--polaris-x", `${polarisData.x}px`);
-    polaris.style.setProperty("--polaris-y", `${polarisData.y}px`);
-
-    sky.appendChild(polaris);
-}
-
-/* <!-- ajout Polaris au chargement du ciel --> */
-document.addEventListener("DOMContentLoaded", async () => {
-    try {
-        const response = await fetch("data/galaxy.json");
-
-        if (!response.ok) {
-            throw new Error(
-                `Impossible de charger data/galaxy.json (${response.status})`,
-            );
-        }
-
-        const galaxy = await response.json();
-
-        createPolaris(galaxy.polaris);
-    } catch (error) {
-        console.error("Erreur chargement Polaris :", error);
-    }
-});
-
 /* <!-- Galaxy V1 : navigation graphe et filaments --> */
 (() => {
     const SVG_NS = "http://www.w3.org/2000/svg";

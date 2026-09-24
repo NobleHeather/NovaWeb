@@ -20,50 +20,50 @@
         {
             "id": "s0003",
             "source": "data/constellations/c0002/stars/s0003.json",
-            "x": -85,
-            "y": 55,
+            "x": -60,
+            "y": 30,
             "anchor": false
         },
         {
             "id": "s0004",
             "source": "data/constellations/c0002/stars/s0004.json",
-            "x": -170,
-            "y": 110,
+            "x": -110,
+            "y": -50,
             "anchor": false
         },
         {
             "id": "s0005",
             "source": "data/constellations/c0002/stars/s0005.json",
-            "x": -85,
+            "x": 30,
             "y": 140,
             "anchor": false
         },
         {
             "id": "s0006",
             "source": "data/constellations/c0002/stars/s0006.json",
-            "x": -145,
-            "y": 220,
+            "x": 150,
+            "y": 100,
             "anchor": false
         },
         {
             "id": "s0007",
             "source": "data/constellations/c0002/stars/s0007.json",
-            "x": -25,
+            "x": 45,
             "y": 220,
             "anchor": false
         },
         {
             "id": "s0008",
             "source": "data/constellations/c0002/stars/s0008.json",
-            "x": -65,
-            "y": 300,
+            "x": 30,
+            "y": 280,
             "anchor": false
         },
         {
             "id": "s0009",
             "source": "data/constellations/c0002/stars/s0009.json",
-            "x": 15,
-            "y": 300,
+            "x": 110,
+            "y": 190,
             "anchor": false
         }
     ],

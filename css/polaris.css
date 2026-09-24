@@ -1,0 +1,356 @@
+/* <!-- Polaris système binaire --> */
+
+/*
+    Réglages principaux.
+
+    --binary-distance :
+        distance de chaque étoile au barycentre.
+
+    --binary-duration :
+        durée d'un tour complet des deux étoiles.
+
+    --drift-duration :
+        durée de la dérive irrégulière du système autour de 0,0.
+*/
+
+:root {
+    --binary-distance: 25px;
+    --binary-duration: 100s;
+    --drift-duration: 75s;
+}
+
+/* <!-- position générale système Polaris --> */
+
+.polaris-system {
+    position: absolute;
+
+    left: calc(50% + var(--polaris-x));
+    top: calc(50% + var(--polaris-y));
+
+    width: 0;
+    height: 0;
+
+    z-index: 5;
+}
+
+/*
+    <!-- dérive organique barycentre -->
+
+    Le centre réel du système se promène légèrement autour
+    des coordonnées Polaris définies dans galaxy.json.
+*/
+
+/* <!-- mouvement continu barycentre Polaris --> */
+.polaris-drift {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 0;
+
+    animation: polaris-system-drift var(--drift-duration) linear infinite;
+}
+
+/*
+    <!-- rotation système binaire -->
+
+    Ce conteneur tourne lentement.
+    Les deux étoiles sont placées de part et d'autre du barycentre.
+*/
+
+.polaris-orbit {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 0;
+
+    animation: polaris-binary-orbit var(--binary-duration) linear infinite;
+}
+
+/* <!-- base commune étoiles Polaris --> */
+
+.polaris-binary-star {
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+/* <!-- position Polaris française --> */
+
+.polaris-binary-star--fr {
+    left: var(--binary-distance);
+    top: 0;
+
+    transform: translate(-50%, -50%);
+}
+
+/* <!-- position Polaris anglaise --> */
+
+.polaris-binary-star--en {
+    left: calc(var(--binary-distance) * -1);
+    top: 0;
+
+    transform: translate(-50%, -50%);
+}
+
+/* <!-- coeur Polaris française --> */
+
+.galaxy-polaris--fr::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 7px rgba(255, 255, 255, 0.95),
+        0 0 18px rgba(255, 255, 255, 0.55);
+}
+
+/* <!-- halo Polaris française --> */
+
+.galaxy-polaris--fr::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 100px;
+    height: 86px;
+
+    transform: translate(-50%, -50%) rotate(-8deg);
+
+    background:
+        radial-gradient(
+            ellipse at 46% 48%,
+            rgba(255, 255, 255, 0.42) 0%,
+            rgba(255, 255, 255, 0.22) 22%,
+            rgba(255, 255, 255, 0.08) 48%,
+            transparent 72%
+        ),
+        radial-gradient(
+            ellipse at 58% 42%,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0.07) 38%,
+            transparent 68%
+        ),
+        radial-gradient(
+            ellipse at 38% 60%,
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 255, 255, 0.05) 42%,
+            transparent 70%
+        );
+
+    filter: blur(4px);
+
+    animation: polaris-fr-glow 18s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+/* <!-- coeur Polaris anglaise bleutée --> */
+
+.galaxy-polaris--en::before {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 12px;
+    height: 12px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgb(235, 246, 255);
+
+    box-shadow:
+        0 0 7px rgba(225, 242, 255, 0.98),
+        0 0 18px rgba(180, 220, 255, 0.62);
+}
+
+/* <!-- halo Polaris anglaise bleuté --> */
+
+.galaxy-polaris--en::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 100px;
+    height: 86px;
+
+    transform: translate(-50%, -50%) rotate(11deg);
+
+    background:
+        radial-gradient(
+            ellipse at 48% 46%,
+            rgba(220, 240, 255, 0.44) 0%,
+            rgba(190, 225, 255, 0.23) 22%,
+            rgba(165, 210, 255, 0.09) 48%,
+            transparent 72%
+        ),
+        radial-gradient(
+            ellipse at 38% 43%,
+            rgba(195, 228, 255, 0.19) 0%,
+            rgba(165, 210, 255, 0.07) 38%,
+            transparent 68%
+        ),
+        radial-gradient(
+            ellipse at 62% 59%,
+            rgba(185, 220, 255, 0.14) 0%,
+            rgba(155, 205, 255, 0.05) 42%,
+            transparent 70%
+        );
+
+    filter: blur(4px);
+
+    animation: polaris-en-glow 21s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+/* <!-- respiration lumineuse Polaris française --> */
+
+@keyframes polaris-fr-glow {
+    0%,
+    100% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+}
+
+/* <!-- respiration lumineuse Polaris anglaise --> */
+
+@keyframes polaris-en-glow {
+    0%,
+    100% {
+        opacity: 0.42;
+    }
+
+    50% {
+        opacity: 0.88;
+    }
+}
+
+/*
+    <!-- orbite Polaris -->
+
+    La rotation fournit le mouvement orbital principal.
+*/
+
+@keyframes polaris-binary-orbit {
+    from {
+        transform: rotate(-14deg);
+    }
+
+    to {
+        transform: rotate(346deg);
+    }
+}
+
+/*
+    <!-- dérive organique barycentre -->
+
+    Les points sont volontairement asymétriques :
+    ce n'est pas une ellipse géométrique.
+*/
+
+/* <!-- dérive organique barycentre plus ample --> */
+/* <!-- dérive elliptique barycentre Polaris --> */
+@keyframes polaris-system-drift {
+    0% {
+        transform: translate(32px, 0);
+    }
+
+    12.5% {
+        transform: translate(23px, 16px);
+    }
+
+    25% {
+        transform: translate(0, 23px);
+    }
+
+    37.5% {
+        transform: translate(-23px, 16px);
+    }
+
+    50% {
+        transform: translate(-32px, 0);
+    }
+
+    62.5% {
+        transform: translate(-23px, -16px);
+    }
+
+    75% {
+        transform: translate(0, -23px);
+    }
+
+    87.5% {
+        transform: translate(23px, -16px);
+    }
+
+    100% {
+        transform: translate(32px, 0);
+    }
+}
+
+/* <!-- focus clavier Polaris --> */
+
+.polaris-binary-star:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 4px;
+}
+
+/* <!-- Polaris mouvement réduit --> */
+
+@media (prefers-reduced-motion: reduce) {
+    .polaris-drift,
+    .polaris-orbit {
+        animation: none;
+    }
+
+    .galaxy-polaris--fr::after,
+    .galaxy-polaris--en::after {
+        animation: none;
+        opacity: 0.6;
+    }
+
+    .polaris-binary-star--fr {
+        left: 25px;
+    }
+
+    .polaris-binary-star--en {
+        left: -25px;
+    }
+}
