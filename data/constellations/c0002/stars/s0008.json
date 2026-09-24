@@ -1,0 +1,27 @@
+{
+    "id": "c0002-s0008",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "language-and-thought",
+        "linguistic-relativity",
+        "linguistic-diversity",
+        "linguistic-homogenization"
+    ],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Oui, il y a un risque réel que la mondialisation linguistique appauvrisse la pensée. L’anglais globalisé, sous sa forme “globish”, tend à réduire les nuances, normaliser des formes d’expression idiomatiques et exporter des cadres mentaux anglo-saxons (individualisme, efficacité, binaire win/lose...). Résultat : des concepts étrangers aux structures mentales locales deviennent dominants, imposant une pensée universalisée qui n’est en réalité que localement fabriquée et des alternatives sont invisibilisées : par exemple, le rapport non-duel au monde (Asie), ou la circularité du temps (Afrique, Océanie).",
+                    "Cela peut créer des impasses conceptuelles où on ne voit plus certaines solutions et une monoculture de pensée."
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": []
+}

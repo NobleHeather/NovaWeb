@@ -16,6 +16,55 @@
             "x": 85,
             "y": 55,
             "anchor": false
+        },
+        {
+            "id": "s0003",
+            "source": "data/constellations/c0002/stars/s0003.json",
+            "x": -85,
+            "y": 55,
+            "anchor": false
+        },
+        {
+            "id": "s0004",
+            "source": "data/constellations/c0002/stars/s0004.json",
+            "x": -170,
+            "y": 110,
+            "anchor": false
+        },
+        {
+            "id": "s0005",
+            "source": "data/constellations/c0002/stars/s0005.json",
+            "x": -85,
+            "y": 140,
+            "anchor": false
+        },
+        {
+            "id": "s0006",
+            "source": "data/constellations/c0002/stars/s0006.json",
+            "x": -145,
+            "y": 220,
+            "anchor": false
+        },
+        {
+            "id": "s0007",
+            "source": "data/constellations/c0002/stars/s0007.json",
+            "x": -25,
+            "y": 220,
+            "anchor": false
+        },
+        {
+            "id": "s0008",
+            "source": "data/constellations/c0002/stars/s0008.json",
+            "x": -65,
+            "y": 300,
+            "anchor": false
+        },
+        {
+            "id": "s0009",
+            "source": "data/constellations/c0002/stars/s0009.json",
+            "x": 15,
+            "y": 300,
+            "anchor": false
         }
     ],
 
@@ -23,6 +72,34 @@
         {
             "from": "s0001",
             "to": "s0002"
+        },
+        {
+            "from": "s0001",
+            "to": "s0003"
+        },
+        {
+            "from": "s0003",
+            "to": "s0004"
+        },
+        {
+            "from": "s0003",
+            "to": "s0005"
+        },
+        {
+            "from": "s0005",
+            "to": "s0006"
+        },
+        {
+            "from": "s0005",
+            "to": "s0007"
+        },
+        {
+            "from": "s0007",
+            "to": "s0008"
+        },
+        {
+            "from": "s0007",
+            "to": "s0009"
         }
     ]
 }

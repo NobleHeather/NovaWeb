@@ -1,0 +1,46 @@
+{
+    "id": "c0002-s0006",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "language-and-thought",
+        "linguistic-relativity",
+        "multilingualism",
+        "evidentiality",
+        "misinformation"
+    ],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Oui, chaque langue structure différemment la pensée. C’est le principe de la linguistique relativiste (hypothèse Sapir-Whorf). Par exemple, le français pousse à raisonner par articulation logique, syntaxe rigide, abstraction (héritage latin), tandis que le tibétain, comme d'autres langues orientées vers la relation, porte des notions cycliques, holistiques, non-duelles. L’afrikaans a des formes passives très simples, ce qui influence les notions de responsabilité et le navajo oblige à préciser comment on connaît ce qu’on affirme, introduisant un degré d’épistémologie dans chaque phrase, entre autres exemples. Donc oui, reformuler un problème dans une autre langue peut conduire à le percevoir autrement, le requalifier et parfois le dénouer."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Est-ce que si on parlait navajo en France, on aurait un tel problème de fake news, tu penses ?"
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Non, la structure du navajo réduirait la propagation des fake news parce qu’il oblige à préciser la source de toute information : vue ? entendue ? déduite ? rapportée ? Un tweet comme “Ils nous mentent tous !” serait incomplet sans cette précision. On serait obligé de restructurer mentalement la fiabilité d’un message avant même de le croire.",
+                    "Ce n’est pas que la langue empêche de mentir, c’est qu’elle entrave la forme même du mensonge flou, en modifiant les habitudes de pensée et de communication."
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": []
+}

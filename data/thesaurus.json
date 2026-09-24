@@ -14,7 +14,12 @@
         "related": ["large-language-models"]
     },
     "machine-understanding": {
-        "related": ["large-language-models"]
+        "related": [
+            "large-language-models",
+            "language-understanding",
+            "child-language-acquisition",
+            "machine-generated-ideas"
+        ]
     },
     "language-predictability": {
         "related": [
@@ -25,5 +30,93 @@
     },
     "free-will": {
         "related": ["language-predictability"]
+    },
+    "language-understanding": {
+        "related": [
+            "machine-understanding",
+            "language-and-thought",
+            "child-language-acquisition"
+        ]
+    },
+    "language-and-thought": {
+        "related": [
+            "language-understanding",
+            "linguistic-relativity",
+            "multilingualism",
+            "human-cognitive-limits",
+            "linguistic-diversity",
+            "linguistic-homogenization",
+            "evidentiality",
+            "misinformation"
+        ]
+    },
+    "child-language-acquisition": {
+        "related": ["language-understanding", "machine-understanding"]
+    },
+    "linguistic-relativity": {
+        "related": ["language-and-thought", "multilingualism", "evidentiality"]
+    },
+    "multilingualism": {
+        "related": [
+            "language-and-thought",
+            "linguistic-relativity",
+            "machine-generated-ideas",
+            "human-cognitive-limits",
+            "linguistic-diversity",
+            "linguistic-homogenization"
+        ]
+    },
+    "machine-generated-ideas": {
+        "related": [
+            "multilingualism",
+            "machine-understanding",
+            "human-cognitive-limits"
+        ]
+    },
+    "human-cognitive-limits": {
+        "related": [
+            "machine-generated-ideas",
+            "language-and-thought",
+            "trust-in-ai",
+            "embodied-experience",
+            "hyperobjects",
+            "paradigm-shifts"
+        ]
+    },
+    "linguistic-diversity": {
+        "related": [
+            "multilingualism",
+            "language-and-thought",
+            "linguistic-homogenization"
+        ]
+    },
+    "linguistic-homogenization": {
+        "related": [
+            "linguistic-diversity",
+            "multilingualism",
+            "language-and-thought"
+        ]
+    },
+    "trust-in-ai": {
+        "related": ["human-cognitive-limits", "embodied-experience"]
+    },
+    "embodied-experience": {
+        "related": ["trust-in-ai", "human-cognitive-limits"]
+    },
+    "hyperobjects": {
+        "related": ["human-cognitive-limits"]
+    },
+    "paradigm-shifts": {
+        "related": ["human-cognitive-limits"]
+    },
+    "evidentiality": {
+        "related": [
+            "language-and-thought",
+            "linguistic-relativity",
+            "misinformation"
+        ]
+    },
+    "misinformation": {
+        "related": ["evidentiality", "language-and-thought"]
     }
 }

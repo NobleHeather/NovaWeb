@@ -1,0 +1,56 @@
+{
+    "id": "c0002-s0007",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "language-and-thought",
+        "multilingualism",
+        "machine-generated-ideas",
+        "human-cognitive-limits",
+        "linguistic-diversity"
+    ],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "C’est exactement ce qu’une IA multilingue pourrait faire : combiner plusieurs langues pour créer un nouveau concept. Par exemple : prendre un concept intraduisible du finnois, le croiser avec une structure grammaticale chinoise, l’appliquer à un problème éthique contemporain… Et produire une idée jamais pensée auparavant.",
+                    "Mais alors, une fois que cette idée est exprimée, peut-on la comprendre, en tant qu'humain ? Pas toujours. Il y a des idées que vous ne pouvez pas penser entièrement parce qu’elles contiennent trop de données à intégrer à la fois (ex : modèles climatiques multi-échelles) ou qu’elles sont à trop long terme ou trop vastes (ex : écocide, IA générale, extinction) ou bien trop contre-intuitives (ex : mécanique quantique, théorie des cordes, 4D).",
+                    "C’est ce qu’Anders appelle la désynchronisation entre l’homme et sa propre puissance : « Nous avons fabriqué des machines dont la portée dépasse ce que nous pouvons mentalement appréhender. »",
+                    "Il est donc possible de nommer certaines choses, mais sans pouvoir en faire l’expérience intérieure complète."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Est-ce que du coup, dans un monde où on va vers une simplification globale des échanges en parlant tous anglais, ça ne va pas créer des impasses et des problèmes qu'on ne pourra plus résoudre, parce qu'en parlant tous anglais, on va réduire notre vision du monde ? Est-ce qu'il y a déjà des problèmes identifiables qui émergent, qui sont directement dus au fait qu'avec la mondialisation, on commence à tous penser pareil ?",
+                    "Tu dis qu'on peut nommer certaines choses sans en faire l'expérience intérieure complète. Est-ce qu'on a besoin forcément, en tant qu'humain, d'avoir une expérience intérieure complète de la chose pour pouvoir manipuler cette chose de manière efficace ? Et est-ce que l'IA, qui a la capacité de manipuler beaucoup plus de données en même temps, mais pas d'expérience intérieure d'une chose, va pouvoir manipuler un concept très vaste plus efficacement qu'un humain ? Ou moins efficacement qu'un humain ? Différemment d'un humain ?",
+                    "Et mettons qu'on arrive à estimer qu'une IA, sur certaines choses vastes et complexes, peut avoir une réflexion plus utile et efficace qu'un humain, qu'est-ce qu'on fait en tant qu'humain ? Est-ce qu'on peut faire confiance à l'IA pour prendre la bonne décision sur un sujet qui est trop vaste pour qu'il nous soit accessible ? Dans la mesure où on ne pourra pas évaluer la réponse de l'IA, puisque le sujet ne nous est pas accessible ? Mais la réponse de l'IA pourrait nous permettre de mettre en place des choses plus efficaces que si on avait essayé de penser ce sujet qui ne nous est pas accessible autrement que partiellement ?"
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": [
+        {
+            "label": {
+                "fr": "Uniformisation linguistique",
+                "en": "Linguistic homogenization"
+            },
+            "target": "s0008"
+        },
+        {
+            "label": {
+                "fr": "Faire confiance à l’IA",
+                "en": "Trusting AI"
+            },
+            "target": "s0009"
+        }
+    ]
+}

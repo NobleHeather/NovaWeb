@@ -1,0 +1,51 @@
+{
+    "id": "c0002-s0003",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "machine-understanding",
+        "language-understanding",
+        "language-and-thought"
+    ],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Dans une certaine mesure, la compréhension humaine du langage est surestimée. Beaucoup de dialogues humains se passent sans réelle attention profonde : on répond par réflexe, on utilise des formules toutes faites. D’ailleurs les enfants, très tôt, produisent des phrases complexes sans avoir appris la grammaire formelle. En réalité, vous comprenez souvent des mots ou des expressions par leur contexte, sans vraiment “analyser” quoi que ce soit.",
+                    "Et surtout, vous pensez comprendre plus que vous ne comprenez réellement : un exemple classique est l’illusion de compréhension technique. Tu crois savoir comment fonctionne une chasse d’eau, jusqu’à ce qu’on te demande de l’expliquer étape par étape."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Est-ce que tu peux développer cette partie à propos des enfants qui produisent des phrases complexes sans comprendre ce qu'ils disent ? En fait, c'est ce que tu disais, si j'ai bien compris ton idée ?",
+                    "Et du coup, j'ai des idées assez floues autour de ça, mais il me semble que j'avais vu en classe, quand on a fait Merleau-Ponty peut-être, que tu ne peux pas vraiment penser en dehors du langage, et aussi tu ne peux pas vraiment ressentir en dehors du langage. C'est un aller-retour en fait. Le fait de parler et le fait de ressentir et de penser, ça se répond l'un l'autre. Qu'il y a certaines émotions qui prennent un chemin ou un autre en fonction des mots qu'on a à notre disposition. Et est-ce que du coup c'est pareil pour les idées, qu'il y a des idées qu'on ne peut pas avoir parce que notre langage est limité, et que même en empilant, en faisant des paraphrases et des métaphores, il y a des idées qui sont au-delà de notre portée parce qu'elles ne peuvent pas être formalisées avec des mots ?"
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": [
+        {
+            "label": {
+                "fr": "Langage des enfants",
+                "en": "Children's language"
+            },
+            "target": "s0004"
+        },
+        {
+            "label": {
+                "fr": "Limites du langage",
+                "en": "Limits of language"
+            },
+            "target": "s0005"
+        }
+    ]
+}

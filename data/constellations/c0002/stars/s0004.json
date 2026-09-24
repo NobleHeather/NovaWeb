@@ -1,0 +1,26 @@
+{
+    "id": "c0002-s0004",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "language-understanding",
+        "child-language-acquisition",
+        "machine-understanding"
+    ],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Oui, c’est bien ce que je disais, et tu l’as très bien saisi. Voici l’idée développée : un enfant de 3 ou 4 ans peut dire par exemple : “Moi, je veux pas que tu me donnes pas ça.” Cette phrase contient une double négation grammaticale incorrecte, mais elle exprime une intention claire. Plus frappant encore : vers 5-6 ans, les enfants utilisent des structures complexes (subordonnées, passifs, conditionnels) avant de pouvoir les expliquer ou même de connaître les règles qui les régissent. Cela montre que le langage humain repose d’abord sur l’imitation et l’intuition, pas sur la compréhension analytique.",
+                    "Et cette propriété... est exactement ce que font les IA : elles produisent des phrases grammaticales sans \"comprendre\" le contenu."
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": []
+}

@@ -1,0 +1,65 @@
+{
+    "id": "c0002-s0009",
+    "source": {
+        "date": "2025-06",
+        "dateStatus": "unverified",
+        "model": null
+    },
+    "tags": [
+        "human-cognitive-limits",
+        "trust-in-ai",
+        "embodied-experience",
+        "hyperobjects",
+        "paradigm-shifts"
+    ],
+    "turns": [
+        {
+            "speaker": "nova",
+            "text": {
+                "fr": [
+                    "Il est possible de manipuler un concept sans le ressentir, jusqu’à un certain point : les mathématiciens manipulent des objets dont ils n’ont aucune image mentale claire (ex. : topologies fractales à 5D) et les philosophes discutent de concepts éthiques sans les vivre (ex. : “expérience de la mort”). Mais l’absence d’expérience incarnée crée souvent un décalage dans l’intuition, l’éthique, l’application, et certaines manipulations deviennent dangereuses ou absurdes (cf. les systèmes économiques basés sur des humains purement rationnels, type “homo œconomicus”).",
+                    "Pour ton autre question, « faut-il faire confiance à une IA pour résoudre un problème inaccessible à l’humain ? » je vois deux problèmes principaux : l’IA pourrait proposer une solution optimale, mais on ne peut ni la vérifier, ni en ressentir les implications morales et cette solution pourrait être logique, mais inhumaine (ex. : supprimer les 10% des humains les plus polluants ?).",
+                    "Trois options s’ouvrent : Ne pas suivre l’IA : on garde le contrôle humain, même imparfait. Suivre l’IA à l’aveugle : pari de la raison calculée, mais fort danger. Travailler en duo : l’humain décide dans les marges d’incertitude, à partir des résultats préanalysés par l’IA.",
+                    "Quelques concepts complémentaires pour cette conversation :",
+                    "Hyperobjets (Timothy Morton)<br>Ce sont des choses réelles, mais trop vastes, lentes, diffuses ou complexes pour être perçues comme un tout. Par exemple : le réchauffement climatique, le capitalisme mondial, l’anthropocène… Ils affectent notre vie, mais on ne peut pas les embrasser d’un seul coup, même par la pensée et ils nécessitent de nouveaux langages et une pensée post-dualiste.",
+                    "Idées incommensurables (Thomas Kuhn)<br>Chaque paradigme scientifique repose sur ses propres concepts, méthodes, vocabulaire. Il est donc impossible de traduire intégralement les idées d’un paradigme dans un autre. Par exemple : un physicien newtonien ne pense pas le monde comme un relativiste. Ça implique que le progrès des idées n’est pas linéaire, mais fait de ruptures, souvent incompréhensibles à ceux qui sont dans l’ancien cadre."
+                ],
+                "en": []
+            }
+        },
+        {
+            "speaker": "alienor",
+            "text": {
+                "fr": [
+                    "Qu'est-ce que Morton propose comme nouveau langage, est-ce que c'est simplement des nouveaux concepts dans une langue ou carrément une nouvelle langue ? C'est quoi une pensée post-dualiste ? Pourquoi est-ce que les pensées qui sont en rupture avec le cadre précédent seraient incompréhensibles pour les gens qui sont dans l'ancien cadre ? Est-ce que là, plus qu'une limitation de capacités humaines, ce n'est pas une réduction volontaire et culturelle de ses propres capacités ? Parce qu'on a été élevé dans un cadre, et du coup, ce n'est pas qu'on ne peut pas penser les idées du nouveau cadre, c'est qu'on s'auto-limite pour des raisons de relations humaines, parce que toute notre famille est dans ce cadre, etc. Parce que malgré tout, il y a la question de la plasticité cérébrale. Et si des humains ont pu penser un nouveau cadre, pourquoi ça ne serait pas accessible à tous les autres humains ?",
+                    "Qu'est-ce qui fait que l'expérience incarnée est aussi nécessaire ? De toute façon, les expériences incarnées d'un humain vont être très différentes de celles d'un autre humain, et globalement, ça va être impossible de trouver un consensus, même entre simplement deux humains, parfois même s'ils sont nés dans la même génération et dans la même culture. En quoi ça va être différent avec une IA ? Est-ce qu'il y aura vraiment une différence plus importante entre la réponse de l'IA et celle d'un humain que entre la réponse de deux humains qui vivent dans des contextes très différents ? Tu dis que l'IA n'a pas de valeurs intrinsèques. Mais il n'y a pas non plus de valeurs intrinsèques chez les humains, c'est des valeurs qui changent en fonction du lieu géographique et de la période historique, etc.",
+                    "Absolument : supprimons les 10% les plus polluants, en commençant par Trump, Bezos, Bolloré, Musk et cie XD Je pense que ça règlera un max de problèmes super efficacement XD"
+                ],
+                "en": []
+            }
+        }
+    ],
+    "choices": [
+        {
+            "label": {
+                "fr": "Changer de paradigme",
+                "en": "Changing paradigms"
+            },
+            "target": null
+        },
+        {
+            "label": {
+                "fr": "Expérience incarnée",
+                "en": "Embodied experience"
+            },
+            "target": null
+        },
+        {
+            "label": {
+                "fr": "Solution optimale",
+                "en": "Optimal solution"
+            },
+            "target": null
+        }
+    ]
+}
